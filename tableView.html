@@ -1,0 +1,29 @@
+<div class="table-responsive">
+    <table rz-table class="table table-bordered" id="myTable">
+        <thead>
+        <tr>
+
+            <th ng-repeat="col in table.columns" >{{ col.value }}
+                <span style="float: right;color:white;" class="glyphicon glyphicon-plus" ng-click="addRow()">
+          </span>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="r in table.rows">
+            <td ng-repeat="cell in r.cells" ng-click="clicked(row)">
+                <div class="cellule" ng-if="cell.value != null">
+                <div class="rating"> <jk-rating-stars id="rating" rating="firstRate" max-rating="3"></jk-rating-stars></div>
+                <div class="priority" style="height: 8px; width: 15%;" ng-style="{'background-color':myColor.value}"></div>
+                <br>
+                <div class="paragraph"><p align="justify">{{ cell.value }}</p></div>
+                <div class="choix"><select class=""ng-model="myColor" ng-options="color.name for color in colors"></select></div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+</div>

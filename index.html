@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="projet">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJs Test d'entretient</title>
+    <link data-require="bootstrap-css" data-semver="3.0.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@*" data-semver="1.5.0" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <!--<script src="bower_components/angular/angular.js"></script>-->
+   <!-- Stars Rating -->
+    <script src="https://code.angularjs.org/1.5.0/angular-animate.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="jk-rating-stars.min.css" />
+    <script src="jk-rating-stars.min.js"></script>
+    <script src="bower_components/angular-table-resize/dist/angular-table-resize.js"></script>
+    <link rel="stylesheet" href="bower_components/angular-table-resize/dist/angular-table-resize.min.css"/>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- Stars Rating -->
+
+      <script src="app.js"></script>
+      
+  </head>
+
+  <body ng-controller="MainCtrl">
+  <form>
+
+    <div ng-include src="isEdit ? 'tableEdit.html' : 'tableView.html'"></div>
+    <button type="button" class="btn btn-success" ng-click="addCol()">
+      Ajouter Colonne <span style="color:white" class="glyphicon glyphicon-plus"></span>
+      <span style="color:white" class="glyphicon glyphicon-arrow-right"></span>
+
+    </button>
+    <button type="button" class="btn btn-primary" ng-class="{true:'btn-primary',false:'btn-primary'}[isEdit]" ng-click="isEdit = !isEdit">{{ isEdit ? 'Save' : 'Editer' }}
+      <span style="color:white" class="glyphicon glyphicon-tasks"> </span></button>
+    <button type="button" class="btn btn-danger" ng-show="isEdit" ng-click="cancel()">Cancel</button>
+
+  </form>
+  </body>
+
+</html>

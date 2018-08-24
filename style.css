@@ -1,0 +1,56 @@
+/* Put your css in here */
+
+body {
+  margin: 15px;
+  margin-top: 70px;
+}
+button.close {
+  position: relative;
+  left: -20px;
+  top: 3px;
+  color: red;
+}
+.close:hover, .close:focus {
+  color: red;
+}
+.close {
+  float: none;
+}
+.table-responsive {
+    empty-cells: hide;
+
+    border-collapse: collapse;
+ table-layout: fixed;
+  overflow: auto;
+        background:gray;
+
+}
+.table-responsive td {
+     border:1px solid;
+    text-align:center;
+    border-bottom:5px solid black;
+    background: white;
+}
+
+.table-responsive #rating{
+    margin-right: 0px;
+    float: right;
+}
+.table-responsive select{
+    float: right;
+    vertical-align: sub;
+    display: table-cell;
+}
+.table-responsive p:empty{
+background-color: green;
+}
+
+span{
+    color:black;
+}
+.cellule{
+    min-height: 50px;
+}
+.nowrap {
+  white-space: nowrap;
+}

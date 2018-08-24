@@ -1,0 +1,23 @@
+  <div class="table-responsive"><table class="table table-condensed table-striped">
+  <thead>
+    <tr>
+      <th><span class="nowrap">
+        <button type="button" class="btn btn-xs btn-success" ng-click="addRow()">Ajouter une ligne</button>
+      </span></th>
+      <th ng-repeat="col in table.columns">
+        <span class="nowrap"><input type="text" ng-model="col.value" />
+        <button type="button" class="close" ng-click="removeCol($index)">&times;</button></span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="r in table.rows" >
+      <td>
+        <button type="button" class="btn btn-xs btn-danger" ng-click="removeRow($index)">Supprimer cette ligne</button>
+      </td>
+      <td ng-repeat="cell in r.cells">
+        <textarea rows="3" cols="4" ng-model="cell.value" />
+      </td>
+    </tr>
+  </tbody>
+</table></div>
